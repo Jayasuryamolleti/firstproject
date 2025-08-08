@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surya Stores - Login/Register</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-container {
+      display: flex;
+      min-height: 100vh;
+      background: linear-gradient(to right, #4db8b8, #51d8c6);
+    }
+
+    .auth-sidebar {
+      flex: 1;
+      background: url('/mini project innospherex/images/hero-bg.jpg') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-sidebar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .auth-sidebar h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .auth-sidebar p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+
+    .auth-form {
+      flex: 1;
+      background: white;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-section {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .form-section:hover {
+      transform: translateY(-5px);
+    }
+
+    .form-section h2 {
+      color: #2263c6;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #eee;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #2263c6;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(34, 99, 198, 0.1);
+    }
+
+    .form-btn {
+      width: 100%;
+      padding: 16px;
+      background: #2263c6;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .form-btn:hover {
+      background: #1a50a5;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .switch-link {
+      text-align: center;
+      margin-top: 25px;
+      color: #666;
+    }
+
+    .switch-link a {
+      color: #2263c6;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .switch-link a:hover {
+      color: #1a50a5;
+    }
+
+    .form-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #f0f7ff, #e0f0ff);
+      border-radius: 15px;
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      .auth-container {
+        flex-direction: column;
+      }
+
+      .auth-sidebar {
+        height: 300px;
+        padding: 20px;
+      }
+
+      .auth-form {
+        padding: 20px;
+      }
+
+      .form-section {
+        padding: 30px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .form-section {
+        padding: 20px;
+      }
+
+      .form-group input {
+        padding: 12px;
+      }
+
+      .form-btn {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-sidebar">
+      <h1>Welcome Back!</h1>
+      <p>Join our community of tech enthusiasts and get access to exclusive deals and offers.</p>
+    </div>
+
+    <div class="auth-form">
+      <div class="form-section">
+        <input type="checkbox" id="toggle">
+        
+        <!-- Login Form -->
+        <form class="login-form">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required>
+          </div>
+          <div class="form-group">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+          <button type="submit" class="form-btn">Login</button>
+          <div class="switch-link">
+            Don't have an account? <a href="#" onclick="document.getElementById('toggle').checked = true">Register</a>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form class="register-form">
+          <h2>Register</h2>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email Address</label>
+            <input type="email" id="registerEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+          </div>
+          <button type="submit" class="form-btn">Register</button>
+          <div class="switch-link">
+            Already have an account? <a href="#" onclick="document.getElementById('toggle').checked = false">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
